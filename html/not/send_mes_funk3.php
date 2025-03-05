@@ -11,7 +11,7 @@ $counter_arr =1;
 		while ($counter_arr <=2 ){
 
 		    $Peremenaya=sprintf("https://api.telegram.org/bot%s/sendMessage?disable_web_page_preview=true&chat_id=%s&text=%s&parse_mode=html",$bot_id, $user, $mes);
-		    echo $Peremenaya;
+		    //echo $Peremenaya;
 		    //file_put_contents(__DIR__."/--new1.txt","\n-!!-\n".$Peremenaya."\n--\n", FILE_APPEND);
 		    $ch = curl_init();
 		    curl_setopt($ch, CURLOPT_URL, "$Peremenaya");
