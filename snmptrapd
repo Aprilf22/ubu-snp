@@ -1,0 +1,2 @@
+# snmptrapd options (use syslog).
+TRAPDOPTS='-On -p /run/snmptrapd.pid'
