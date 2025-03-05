@@ -30,7 +30,7 @@ $counter_arr =1;
         		    $counter_arr = 3;
 			}else{
 			    echo "\nOшибка: ".curl_error($ch);
-			    file_put_contents(__DIR__."/--new1.txt","\n-!!-\n".curl_error($ch)."\n--\n", FILE_APPEND);
+			    //file_put_contents(__DIR__."/--new1.txt","\n-!!-\n".curl_error($ch)."\n--\n", FILE_APPEND);
 			}
 		}
 	$counter_arr =1;
