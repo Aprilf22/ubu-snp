@@ -45,24 +45,21 @@ $stdin = fopen('php://stdin', 'r');
 	}
 
 
-// $array_var - массив со всякими приколами 
+//file_put_contents('/var/www/html/_'.$array_var[0].'_.txt', "\n--!!--\n".print_r($array_var,1)."\n--------\n", FILE_APPEND);
 
-file_put_contents('/var/www/html/_'.$array_var[0].'_.txt', "\n--!!--\n".print_r($array_var,1)."\n--------\n", FILE_APPEND);
-
-
-    // обработаем  инттерфейсы.
+// обработаем  инттерфейсы.
 $arr_sw = (json_decode ($json_sw , true));
 $today = date("Y-m-d H:i:s");
 
 if (($array_var[3] == ".1.3.6.1.6.3.1.1.5.3") || ($array_var[3] == ".1.3.6.1.6.3.1.1.5.4")) { // обработаем трап  от интерфеса.
-    file_put_contents('/root/log_dfl/M1.txt', "\n--!!--\n".print_r($array_var,1)."\n--------\n", FILE_APPEND);// запишем все :-)
+    //file_put_contents('/root/log_dfl/M1.txt', "\n--!!--\n".print_r($array_var,1)."\n--------\n", FILE_APPEND);// запишем все :-)
     foreach ( $arr_sw as $key => $dev){
 	echo " $key ===> $dev\n" ;
 	    if (($array_var[0] == $key ) && ($dev ==  "mikrotik" )) {
 	    $if_name  = snmpget($array_var[0], "public", sprintf(".1.3.6.1.2.1.2.2.1.2.%s", $array_var[5] ));
 	    $if_name  = preg_replace ('/STRING: /', '', $if_name  );
 	     if ($if_name  == "internet") {
-	     $nik="@April_22 , @lehisnoe";
+	     $nik="@Apr , @noe";
 	     }else{
 	     $nik="";
 	     }
@@ -76,7 +73,7 @@ if (($array_var[3] == ".1.3.6.1.6.3.1.1.5.3") || ($array_var[3] == ".1.3.6.1.6.3
 	    $if_name  = snmpget($array_var[0], "public", sprintf(".1.3.6.1.2.1.2.2.1.2.%s", $array_var[4] ));
 	    $if_name  = preg_replace ('/STRING: /', '', $if_name  );
 	    if ($if_name  == "internet") {
-		    $nik="@April_22 , @lehisnoe";
+		    $nik="@Apr , @noe";
 	    }else{
 	    	    $nik="";
          }
@@ -92,7 +89,7 @@ if (($array_var[3] == ".1.3.6.1.6.3.1.1.5.3") || ($array_var[3] == ".1.3.6.1.6.3
 	}
     }
 
-   file_get_contents (sprintf("http://10.10.16.71/not/not.php?message=%s",rawurlencode($mes))); //<---------------------------
+   file_get_contents (sprintf("http://IP_doc/not/not.php?message=%s",rawurlencode($mes))); //<---------------------------
 //.print_r($array_var,1)
 
 
@@ -105,12 +102,12 @@ if (($array_var[3] == ".1.3.6.1.6.3.1.1.5.3") || ($array_var[3] == ".1.3.6.1.6.3
 
 
     if ($array_var[3] == ".1.3.6.1.4.1.318.0.5"){
-	    $mes = "$today\n@april_22, @lehisnoe\n<b>!!!Отключили токи!!!</b>";
+	    $mes = "$today\n@apr, @noe\n<b>!!!Отключили токи!!!</b>";
 	    file_get_contents (sprintf("http://127.0.0.1/not/not.php?message=%s",rawurlencode($mes)));
     }
 
     if ($array_var[3] == ".1.3.6.1.4.1.318.0.9"){
-	$mes = "$today\n@april_22 , @lehisnoe\n<b>Включили токи!!!!</b>";
+	$mes = "$today\n@apr , @noe\n<b>Включили токи!!!!</b>";
 	file_get_contents (sprintf("http://127.0.0.1/not/not.php?message=%s",rawurlencode($mes)));
     }
 
