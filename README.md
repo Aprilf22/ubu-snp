@@ -18,9 +18,13 @@ docker run \
 --privileged \
 --log-opt max-size=200M \
 --name=asnp \
---volume /etc/mydoc/snmp/snmp:/etc/snmp \
---volume /etc/mydoc/snmp/html:/var/www/html \
+--volume /patch/to/snmp:/etc/snmp \
+--volume /patch/to/snmp/html:/var/www/html \
 --publish 8080:80/tcp \
 --publish 161:161/udp \
 --publish 162:162/udp \
 asnp-debian_2004
+
+# данный докер собирался для работы в контейнерах роутеров MikriTik
+
+
