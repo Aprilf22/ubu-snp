@@ -1,14 +1,6 @@
 #!/usr/bin/php
 <?php
 
-
-/*
-
-$bot_id="303480220:AAGKaySS73dE1IqaM7kmAWHA2MVKhEiEFeQ";
-$mes = "ПривеДД <b>444444444!</b> ";
-message_telegram ($bot_id, $mes);
-*/
-
 function message_telegram ($bot_id, $mes){
 $counter_arr =1;
     $mes= rawurlencode($mes);
